@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – AI Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="トップへ戻る">Portfolio</a>
+      <nav aria-label="メインナビゲーション">
+        <ul class="nav-links">
+          <li><a href="#works">Works</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero" aria-label="ヒーローセクション">
+      <div class="hero-inner">
+        <span class="badge" aria-label="職種">AI Developer</span>
+        <h1 class="hero-title">
+          Claude Codeで作る、<br>AI開発の記録。
+        </h1>
+        <p class="hero-desc">Agents / Skills / Workflows</p>
+        <div class="section-divider" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ── WORKS ── -->
+    <section class="works" id="works" aria-label="制作実績">
+      <div class="section-inner">
+        <h2 class="section-title">Works</h2>
+
+        <div class="filter-bar" role="group" aria-label="カテゴリフィルター">
+          <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="agent" aria-pressed="false">Agent</button>
+          <button class="filter" data-filter="skill" aria-pressed="false">Skill</button>
+          <button class="filter" data-filter="workflow" aria-pressed="false">Workflow</button>
+        </div>
+
+        <div class="grid" role="list">
+
+          <article class="card" data-cat="agent" role="listitem">
+            <img
+              src="images/4895bb55b7beda21c59d5006481042fb.png"
+              alt="Business Doc Writer Agent のスクリーンショット"
+              loading="lazy"
+            >
+            <div class="overlay" aria-hidden="true">
+              <span class="tag tag--agent">Agent</span>
+              <span class="card-name">Business Doc Writer</span>
+              <span class="card-tech">Claude Code · 3 Skills</span>
+            </div>
+          </article>
+
+          <article class="card" data-cat="skill" role="listitem">
+            <img
+              src="images/936eccd000ef4c8759a086862f8575f2.png"
+              alt="Char Count Skill のスクリーンショット"
+              loading="lazy"
+            >
+            <div class="overlay" aria-hidden="true">
+              <span class="tag tag--skill">Skill</span>
+              <span class="card-name">Char Count</span>
+              <span class="card-tech">Claude Code · PowerShell</span>
+            </div>
+          </article>
+
+          <article class="card" data-cat="workflow" role="listitem">
+            <img
+              src="images/ee7fff7f7cc16d2df609969a13f0fd22.png"
+              alt="Task Management Workflow のスクリーンショット"
+              loading="lazy"
+            >
+            <div class="overlay" aria-hidden="true">
+              <span class="tag tag--workflow">Workflow</span>
+              <span class="card-name">Task Management</span>
+              <span class="card-tech">Claude Code · Task API</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section class="about" id="about" aria-label="自己紹介">
+      <div class="section-inner">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p class="about-text">
+            Claude Codeを使ったAI開発に取り組んでいます。エージェント・スキル・ワークフローを組み合わせて、日常業務を自動化するツールを制作しています。
+          </p>
+          <ul class="skill-list" aria-label="使用技術">
+            <li><span class="skill-badge">Claude Code</span></li>
+            <li><span class="skill-badge">Prompt Engineering</span></li>
+            <li><span class="skill-badge">Python</span></li>
+            <li><span class="skill-badge">PowerShell</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section class="contact" id="contact" aria-label="お問い合わせ">
+      <div class="section-inner">
+        <h2 class="section-title">Contact</h2>
+        <a
+          href="mailto:kkhanatoku@gmail.com"
+          class="contact-mail"
+          aria-label="メールを送る: kkhanatoku@gmail.com"
+        >kkhanatoku@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="filter.js"></script>
+</body>
+</html>
