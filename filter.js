@@ -5,10 +5,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   const filterBtns = document.querySelectorAll('.filter');
   const cards = document.querySelectorAll('.card');
+  const grid = document.querySelector('.grid');
+
+  if (!filterBtns.length || !cards.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // アクティブ状態の更新
       filterBtns.forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-pressed', 'false');
@@ -18,11 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filter = btn.dataset.filter;
 
-      // カードの表示/非表示切り替え
       cards.forEach(card => {
         const isVisible = filter === 'all' || card.dataset.cat === filter;
         card.classList.toggle('hidden', !isVisible);
       });
+
+      // 0件時の空状態メッセージ
+      const visibleCount = [...cards].filter(c => !c.classList.contains('hidden')).length;
+      let emptyMsg = grid.querySelector('.grid-empty');
+      if (visibleCount === 0) {
+        if (!emptyMsg) {
+          emptyMsg = document.createElement('p');
+          emptyMsg.className = 'grid-empty';
+          emptyMsg.textContent = '該当する作品がありません。';
+          grid.appendChild(emptyMsg);
+        }
+      } else {
+        emptyMsg?.remove();
+      }
     });
   });
 });
